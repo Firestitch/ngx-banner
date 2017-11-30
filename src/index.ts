@@ -42,7 +42,6 @@ export * from './fsbanner.component';
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
 
     //MATERIAL
     MatAutocompleteModule,

@@ -1,10 +1,9 @@
-import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'fs-banner',
     templateUrl: './fs-banner.component.html',
-    styleUrls: ['./fs-banner.component.scss'],
-    encapsulation: ViewEncapsulation.Native
+    styleUrls: ['./fs-banner.component.scss']
 })
 export class FsBannerComponent {
     @Input('fsBannerPicture') picture: string;

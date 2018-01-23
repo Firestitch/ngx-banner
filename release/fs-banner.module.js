@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-// Components
+var material_1 = require("@angular/material");
 var fs_banner_component_1 = require("./components/fs-banner-component");
 var FsBannerModule = /** @class */ (function () {
     function FsBannerModule() {
@@ -25,6 +25,7 @@ var FsBannerModule = /** @class */ (function () {
             imports: [
                 // Angular
                 common_1.CommonModule,
+                material_1.MatIconModule
             ],
             exports: [
                 fs_banner_component_1.FsBannerComponent,

@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("@angular/core"), require("@angular/common"));
+		module.exports = factory(require("@angular/core"), require("@angular/common"), require("@angular/material"));
 	else if(typeof define === 'function' && define.amd)
-		define("@firestitch/banner", ["@angular/core", "@angular/common"], factory);
+		define("@firestitch/banner", ["@angular/core", "@angular/common", "@angular/material"], factory);
 	else if(typeof exports === 'object')
-		exports["@firestitch/banner"] = factory(require("@angular/core"), require("@angular/common"));
+		exports["@firestitch/banner"] = factory(require("@angular/core"), require("@angular/common"), require("@angular/material"));
 	else
-		root["@firestitch/banner"] = factory(root["@angular/core"], root["@angular/common"]);
-})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE__angular_core__, __WEBPACK_EXTERNAL_MODULE__angular_common__) {
+		root["@firestitch/banner"] = factory(root["@angular/core"], root["@angular/common"], root["@angular/material"]);
+})(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE__angular_core__, __WEBPACK_EXTERNAL_MODULE__angular_common__, __WEBPACK_EXTERNAL_MODULE__angular_material__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -283,7 +283,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("@angular/core");
 var common_1 = __webpack_require__("@angular/common");
-// Components
+var material_1 = __webpack_require__("@angular/material");
 var fs_banner_component_1 = __webpack_require__("./components/fs-banner-component/index.ts");
 var FsBannerModule = /** @class */ (function () {
     function FsBannerModule() {
@@ -300,6 +300,7 @@ var FsBannerModule = /** @class */ (function () {
             imports: [
                 // Angular
                 common_1.CommonModule,
+                material_1.MatIconModule
             ],
             exports: [
                 fs_banner_component_1.FsBannerComponent,
@@ -345,6 +346,13 @@ module.exports = __WEBPACK_EXTERNAL_MODULE__angular_common__;
 /***/ (function(module, exports) {
 
 module.exports = __WEBPACK_EXTERNAL_MODULE__angular_core__;
+
+/***/ }),
+
+/***/ "@angular/material":
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE__angular_material__;
 
 /***/ })
 

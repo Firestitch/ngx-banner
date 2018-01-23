@@ -1,16 +1,10 @@
-import { ElementRef, Renderer, EventEmitter } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material';
+import { ElementRef, EventEmitter } from '@angular/core';
 export declare class FsBannerComponent {
-    private matIconRegistry;
-    private domSanitizer;
-    private renderer;
     picture: string;
     icon: string;
-    hover: boolean;
-    upload: EventEmitter<any>;
+    onUpload: EventEmitter<any>;
     fileInput: ElementRef;
-    constructor(matIconRegistry: MatIconRegistry, domSanitizer: DomSanitizer, renderer: Renderer);
-    _upload(): void;
+    constructor();
+    fileUpload(): void;
     fileChanged($event: any): void;
 }

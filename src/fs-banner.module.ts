@@ -2,7 +2,6 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material';
 
-// Components
 import { FsBannerComponent } from './components/fs-banner-component';
 
 @NgModule({

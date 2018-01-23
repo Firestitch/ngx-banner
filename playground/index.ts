@@ -1,23 +1,27 @@
-/**
- * This is only for local test
- */
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { Component } from '@angular/core';
+import { NgModule, Component, ViewEncapsulation } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { SampleModule }  from 'fs-address';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { FsBannerModule }  from '@firestitch/banner';
 
 @Component({
-  selector: 'app',
-  template: `<sample-component></sample-component>`
+  selector: 'app-root',
+  templateUrl: 'template.html',
+  styleUrls: [ 'styles.css' ],
+  encapsulation: ViewEncapsulation.None
 })
-class AppComponent {}
+class AppComponent {
+  constructor() {}
+
+  ngOnInit() {  
+  }
+}
 
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent ],
-  imports: [ BrowserModule, SampleModule ]
+  imports: [ BrowserModule, FsBannerModule, BrowserAnimationsModule ]
 })
 class AppModule {}
 

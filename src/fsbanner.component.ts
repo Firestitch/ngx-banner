@@ -1,7 +1,5 @@
-import { FsBannerService } from './fsbanner.service';
-import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, Renderer, Output, EventEmitter } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
-import { MatIconRegistry } from '@angular/material';
+import { Component, Input, ViewEncapsulation, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+
 @Component({
     selector: 'fs-banner',
     templateUrl: './fsbanner.component.html',
@@ -9,27 +7,19 @@ import { MatIconRegistry } from '@angular/material';
     encapsulation: ViewEncapsulation.Native
 })
 export class FsBannerComponent {
-    @Input() picture: string;
-    @Input() icon: string;
-    @Input() hover: boolean = true;
-    @Output() upload: EventEmitter<any> = new EventEmitter<any>(true);
+    @Input('fsBannerPicture') picture: string;
+    @Input('fsBannerIcon') icon: string;
+    @Output('fsBannerOnUpload') onUpload: EventEmitter<any> = new EventEmitter<any>(true);
     @ViewChild('fileInput') fileInput: ElementRef;
-    constructor(
-        private matIconRegistry: MatIconRegistry, 
-        private domSanitizer: DomSanitizer,
-        private service: FsBannerService,
-        private renderer:Renderer
-    ){
-        matIconRegistry.addSvgIconSet(domSanitizer.bypassSecurityTrustResourceUrl('./assets/mdi.svg')); // Or whatever path you placed mdi.svg at
-      }
+    constructor() {}
 
-    public _upload() {
+    public fileUpload() {
         let el: HTMLElement = this.fileInput.nativeElement as HTMLElement;
         el.click();
     }
 
     public fileChanged($event) {
         if($event && $event.path && $event.path[0] && $event.path[0].files)
-            this.upload.emit($event.path[0].files[0])
+            this.onUpload.emit($event.path[0].files[0])
     }
 }

@@ -6,7 +6,11 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   del = require('del'),
   runSequence = require('run-sequence'),
-  inlineResources = require('./tools/gulp/inline-resources');
+  inlineResources = require('./tools/gulp/inline-resources'),
+  replace = require('gulp-replace'),
+  ucfirst = require('ucfirst'),
+  inquirer = require('inquirer'),
+  renameregex = require('gulp-regex-rename');
 
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
@@ -125,7 +129,7 @@ gulp.task('rollup:umd', function () {
       // The name to use for the module for UMD/IIFE bundles
       // (required for bundles with exports)
       // See "name" in https://rollupjs.org/#core-functionality
-      name: 'fs-address',
+      name: 'banner',
 
       // See "globals" in https://rollupjs.org/#core-functionality
       globals: {
@@ -133,7 +137,7 @@ gulp.task('rollup:umd', function () {
       }
 
     }))
-    .pipe(rename('fs-address.umd.js'))
+    .pipe(rename('banner.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
 
@@ -163,18 +167,20 @@ gulp.task('copy:readme', function () {
     .pipe(gulp.dest(distFolder));
 });
 
-/**
- * 10. Delete /.tmp folder
- */
+/** * 10. Delete /.tmp folder */
 gulp.task('clean:tmp', function () {
-  return deleteFolders([tmpFolder]);
+  return deleteFolders([`{$tmpFolder}/**`]);
 });
 
-/**
- * 11. Delete /build folder
- */
+/** * 11. Delete /build folder */
 gulp.task('clean:build', function () {
-  return deleteFolders([buildFolder]);
+  return deleteFolders([`{$buildFolder/**}`]);
+});
+
+
+gulp.task('copy:css', function () {
+  return gulp.src([`${srcFolder}/*css`])
+    .pipe(gulp.dest(distFolder));
 });
 
 gulp.task('compile', function () {
@@ -188,6 +194,7 @@ gulp.task('compile', function () {
     'copy:build',
     'copy:manifest',
     'copy:readme',
+    'copy:css',
     'clean:build',
     'clean:tmp',
     function (err) {
@@ -219,3 +226,27 @@ gulp.task('default', ['build:watch']);
 function deleteFolders(folders) {
   return del(folders);
 }
+
+gulp.task('setup', function () {
+  
+  return inquirer.prompt([{
+    type: 'input',
+    name: 'name',
+    message: 'What is the name of the new package?\n'
+  }]).then(function(res) {
+    
+    gulp.src(['**','!./node_modules/**','!./gulpfile.js'],{ base: './' })
+      .pipe(replace('packagenamespace', res.name))
+        .pipe(gulp.dest('./'))
+        .on('end', function() {
+          gulp.src(['**','!./node_modules/**','!./gulpfile.js'],{ base: './' })
+          .pipe(replace('PackageNamespace', ucfirst(res.name)))
+            .pipe(gulp.dest('./'))
+            .on('end', function() {
+              gulp.src('./src/fspackagenamespace*')
+              .pipe(renameregex(/packagenamespace/, res.name))
+              .pipe(gulp.dest('./src'))
+          });
+       });
+  });  
+});

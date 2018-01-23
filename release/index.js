@@ -243,8 +243,7 @@ var FsBannerComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'fs-banner',
             template: __webpack_require__("./components/fs-banner-component/fs-banner.component.html"),
-            styles: [__webpack_require__("./components/fs-banner-component/fs-banner.component.scss")],
-            encapsulation: core_1.ViewEncapsulation.Native
+            styles: [__webpack_require__("./components/fs-banner-component/fs-banner.component.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], FsBannerComponent);

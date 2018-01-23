@@ -42,8 +42,7 @@ var FsBannerComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'fs-banner',
             templateUrl: './fs-banner.component.html',
-            styleUrls: ['./fs-banner.component.css'],
-            encapsulation: core_1.ViewEncapsulation.Native
+            styleUrls: ['./fs-banner.component.css']
         }),
         __metadata("design:paramtypes", [])
     ], FsBannerComponent);

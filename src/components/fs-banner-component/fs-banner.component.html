@@ -1,0 +1,14 @@
+<div class="picture-wrapper" (click)="_upload()" [class.hover]="hover">
+    <input type="file" #fileInput placeholder="Upload file..." (change)="fileChanged($event)" id="fileupload" />
+    <img [src]="picture" *ngIf="picture">
+    <div class="icon-container" *ngIf="!picture">
+        <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+        <mat-icon *ngIf="!icon">perm_identity</mat-icon>
+    </div>
+    <div class="change">
+        <span>Change</span>
+    </div>
+</div>
+<div class="headers-wrapper">
+    <ng-content></ng-content>
+</div>

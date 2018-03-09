@@ -1,2 +1,2 @@
 export * from './fs-banner.module';
-export * from './components/fs-banner-component';
+export * from './components/fs-banner-component/fs-banner.component';

@@ -1,4 +1,4 @@
-<div class="picture-wrapper" (click)="fileUpload()" [class.hover]="hover">
+<div class="picture-wrapper" (click)="fileUpload()">
     <input type="file" #fileInput (change)="fileChanged($event)"/>
     <img [src]="picture" *ngIf="picture">
     <div class="icon-container" *ngIf="!picture">

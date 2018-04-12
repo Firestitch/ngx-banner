@@ -18,7 +18,8 @@ export class FsBannerComponent {
     }
 
     public fileChanged($event) {
-        if($event && $event.path && $event.path[0] && $event.path[0].files)
+        if ($event && $event.path && $event.path[0] && $event.path[0].files) {
             this.onUpload.emit($event.path[0].files[0])
+        }
     }
 }

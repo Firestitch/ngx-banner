@@ -1,7 +1,7 @@
 {
   "name": "@firestitch/banner",
   "description": "@firestitch/banner",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/Firestitch/banner"
@@ -27,19 +27,22 @@
     "copy:build": "cpx -v \"src/**/*\" \"build\"",
     "copy:styles": "cpx -v \"build/**/*.css\" \"package\"",
     "copy:templates": "cpx -v \"build/**/*.html\" \"package\"",
-    "package": "npm-run-all -s clean:build clean:package copy:build build:sass package:replace-scss package:aot package:build copy:styles copy:templates package:minify clean:build",
+    "copy:package": "cpx -v \"package.json\" \"package\"",
+    "package": "npm-run-all -s clean:build clean:package copy:build build:sass package:replace-scss package:aot package:build copy:styles copy:templates package:minify clean:build package:functions",
+    "package:functions": "tsc -p tsconfig.es6.json",
     "package:aot": "ngc -p tsconfig.aot.json",
     "package:replace-scss": "node ./tools/replace-scss.js",
     "package:dev": "webpack --config=tools/webpack.dev.js --progress --profile --watch",
     "package:minify": "uglifyjs package/index.js --source-map --compress --mangle --screw-ie8 --output package/index.min.js",
     "package:build": "webpack --config=tools/webpack.package.js --progress --profile",
     "demo:build": "npm-run-all -s clean:demo compodoc demo:webpack",
-    "demo:webpack": "webpack --config=tools/webpack.demo.js --progress --profile",
     "demo:serve": "http-server ./demo",
+    "demo:webpack": "webpack --config=tools/webpack.demo.js --progress --profile",
     "build:sass": "node-sass -r build/ -o build/ || true",
     "serve": "webpack-dev-server --config=tools/webpack.playground.js --progress --profile --watch",
     "lint": "tslint 'src/**/*.ts' -p ./tslint.json",
-    "compodoc": "./node_modules/.bin/compodoc src --disableInternal --disablePrivate --disableGraph --disableSourceCode --hideGenerator --output docs --tsconfig tsconfig.compodoc.json"
+    "compodoc": "./node_modules/.bin/compodoc src --disableInternal --disablePrivate --disableGraph --disableSourceCode --hideGenerator --output docs --tsconfig tsconfig.compodoc.json",
+    "postinstall": "npm rebuild node-sass"
   },
   "devDependencies": {
     "@angular/animations": "^5.2.8",
@@ -125,7 +128,5 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  "dependencies": {
-    "tsmodels": "^0.2.7"
-  }
+  "dependencies": {}
 }

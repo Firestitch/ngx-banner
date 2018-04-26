@@ -8,7 +8,7 @@ exports = module.exports = __webpack_require__("../node_modules/css-loader/lib/c
 
 
 // module
-exports.push([module.i, ":host {\n  background-color: #efefef;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 100px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-box-flex: 1;\n}\n\n:host input[type=\"file\"] {\n  position: fixed;\n  top: -100em;\n}\n\n:host .headers-wrapper * {\n  padding-top: 4px;\n}\n\n:host .headers-wrapper *:first-child {\n  padding-top: 0;\n}\n\n:host [fs-banner-super],\n:host [fs-banner-sub] {\n  font-size: 12px;\n}\n\n:host [fs-banner-heading] {\n  font-size: 15px;\n}\n\n:host .picture-wrapper {\n  width: 80px;\n  height: 80px;\n  border-radius: 100%;\n  overflow: hidden;\n  margin: 10px;\n  margin-left: 15px;\n  position: relative;\n  cursor: pointer;\n}\n\n:host .picture-wrapper .icon-container {\n  margin-bottom: -14px;\n  background-color: #fcfbfc;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n  padding-top: calc(50% - 24px);\n  color: #a8a8a8;\n}\n\n:host .picture-wrapper .icon-container .material-icons {\n  font-family: 'Material Icons';\n  font-weight: normal;\n  font-style: normal;\n  font-size: 50px;\n  width: 50px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -webkit-font-feature-settings: 'liga';\n  -webkit-font-smoothing: antialiased;\n}\n\n:host .picture-wrapper .change {\n  margin-top: -34px;\n  width: 100%;\n  font-size: 11px;\n  position: absolute;\n  text-align: center;\n  /* background-color: transparent; */\n  background-color: rgba(128, 128, 128, .35);\n  height: 30px;\n  padding-top: 9px;\n  /* z-index: 1; */\n}\n\n:host .picture-wrapper.hover .change {\n  display: none;\n}\n\n:host .picture-wrapper.hover:hover .change {\n  display: block;\n}\n\n:host .picture-wrapper img {\n  width: 100%;\n  height: 100%;\n}\n\n", "", {"version":3,"sources":["C:/Projects/fs-banner/src/components/fs-banner-component/C:/Projects/fs-banner/src/components/fs-banner-component/C:/Projects/fs-banner/src/components/fs-banner-component/src/components/fs-banner-component/fs-banner.component.scss","C:/Projects/fs-banner/src/components/fs-banner-component/C:/Projects/fs-banner/src/components/fs-banner-component/fs-banner.component.scss"],"names":[],"mappings":"AASA;EAEE,0BAAA;EACA,0BAAA;MAAA,uBAAA;UAAA,oBAAA;EAEA,cAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,+BAAA;UAAA,uBAAA;EACA,oBAAA;CCVD;;ADED;EAWM,gBAAA;EACA,YAAA;CCTL;;ADHD;EAiBU,iBAAA;CCVT;;ADSK;EAGQ,eAAA;CCRb;;ADXD;;EA0BM,gBAAA;CCVL;;ADhBD;EA8BM,gBAAA;CCVL;;ADYC;EACI,YAAA;EACA,aAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,kBAAA;EACA,mBAAA;EACA,gBAAA;CCTL;;ADWK;EACI,qBAAA;EACA,0BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,8BAAA;EACA,eAAA;CCRT;;ADSS;EACI,8BAAA;EACA,oBAAA;EACA,mBAAA;EACA,gBAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,qBAAA;EACA,sBAAA;EACA,oBAAA;EACA,kBAAA;EACA,eAAA;EACA,sCAAA;EACA,oCAAA;CCNb;;AD1DD;EAoEU,kBAAA;EACA,YAAA;EACA,gBAAA;EACA,mBAAA;EACA,mBAAA;EACA,oCAAA;EACA,2CAAA;EACA,aAAA;EACA,iBAAA;EAEA,iBAAA;CCPT;;ADvED;EAmFc,cAAA;CCRb;;ADWa;EACI,eAAA;CCRjB;;AD/ED;EA4FU,YAAA;EACA,aAAA;CCTT","file":"fs-banner.component.scss","sourcesContent":["// @import 'src/styles/theme.scss';\r\n// @include angular-material-theme($app-theme);\r\n// @mixin candy-carousel-theme($theme) {\r\n//     // Extract whichever individual palettes you need from the theme.\r\n//     $primary: map-get($theme, primary);\r\n//     $accent: map-get($theme, accent);\r\n\r\n\r\n// }\r\n:host {\r\n\r\n  background-color: #efefef;\r\n  align-items: center;\r\n\r\n  height: 100px;\r\n  display: flex;\r\n  box-sizing: border-box;\r\n  -webkit-box-flex: 1;\r\n\r\n  input[type=\"file\"] {\r\n      position: fixed;\r\n      top: -100em\r\n  }\r\n\r\n  .headers-wrapper {\r\n      * {\r\n          padding-top: 4px;\r\n          &:first-child {\r\n              padding-top: 0;\r\n          }\r\n      }\r\n  }\r\n\r\n  [fs-banner-super],\r\n  [fs-banner-sub] {\r\n      font-size: 12px;\r\n  }\r\n\r\n  [fs-banner-heading] {\r\n      font-size: 15px;\r\n  }\r\n  .picture-wrapper {\r\n      width: 80px;\r\n      height: 80px;\r\n      border-radius: 100%;\r\n      overflow: hidden;\r\n      margin: 10px;\r\n      margin-left: 15px;\r\n      position: relative;\r\n      cursor:pointer;\r\n\r\n      .icon-container {\r\n          margin-bottom: -14px;\r\n          background-color: #fcfbfc;\r\n          height: 100%;\r\n          width: 100%;\r\n          text-align: center;\r\n          padding-top: calc(50% - 24px);\r\n          color: #a8a8a8;\r\n          .material-icons {\r\n              font-family: 'Material Icons';\r\n              font-weight: normal;\r\n              font-style: normal;\r\n              font-size: 50px;\r\n              width: 50px;\r\n              line-height: 1;\r\n              letter-spacing: normal;\r\n              text-transform: none;\r\n              display: inline-block;\r\n              white-space: nowrap;\r\n              word-wrap: normal;\r\n              direction: ltr;\r\n              -webkit-font-feature-settings: 'liga';\r\n              -webkit-font-smoothing: antialiased;\r\n          }\r\n      }\r\n      .change {\r\n          margin-top: -34px;\r\n          width: 100%;\r\n          font-size: 11px;\r\n          position: absolute;\r\n          text-align: center;\r\n          /* background-color: transparent; */\r\n          background-color: rgba(128, 128, 128, 0.35);\r\n          height: 30px;\r\n          padding-top: 9px;\r\n\r\n          /* z-index: 1; */\r\n      }\r\n\r\n      &.hover {\r\n          .change {\r\n              display: none;\r\n          }\r\n          &:hover {\r\n              .change {\r\n                  display: block;\r\n              }\r\n          }\r\n      }\r\n      img {\r\n          width: 100%;\r\n          height: 100%;\r\n      }\r\n  }\r\n}\r\n",":host {\n  background-color: #efefef;\n  align-items: center;\n  height: 100px;\n  display: flex;\n  box-sizing: border-box;\n  -webkit-box-flex: 1;\n}\n\n:host input[type=\"file\"] {\n  position: fixed;\n  top: -100em;\n}\n\n:host .headers-wrapper * {\n  padding-top: 4px;\n}\n\n:host .headers-wrapper *:first-child {\n  padding-top: 0;\n}\n\n:host [fs-banner-super],\n:host [fs-banner-sub] {\n  font-size: 12px;\n}\n\n:host [fs-banner-heading] {\n  font-size: 15px;\n}\n\n:host .picture-wrapper {\n  width: 80px;\n  height: 80px;\n  border-radius: 100%;\n  overflow: hidden;\n  margin: 10px;\n  margin-left: 15px;\n  position: relative;\n  cursor: pointer;\n}\n\n:host .picture-wrapper .icon-container {\n  margin-bottom: -14px;\n  background-color: #fcfbfc;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n  padding-top: calc(50% - 24px);\n  color: #a8a8a8;\n}\n\n:host .picture-wrapper .icon-container .material-icons {\n  font-family: 'Material Icons';\n  font-weight: normal;\n  font-style: normal;\n  font-size: 50px;\n  width: 50px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -webkit-font-feature-settings: 'liga';\n  -webkit-font-smoothing: antialiased;\n}\n\n:host .picture-wrapper .change {\n  margin-top: -34px;\n  width: 100%;\n  font-size: 11px;\n  position: absolute;\n  text-align: center;\n  /* background-color: transparent; */\n  background-color: rgba(128, 128, 128, 0.35);\n  height: 30px;\n  padding-top: 9px;\n  /* z-index: 1; */\n}\n\n:host .picture-wrapper.hover .change {\n  display: none;\n}\n\n:host .picture-wrapper.hover:hover .change {\n  display: block;\n}\n\n:host .picture-wrapper img {\n  width: 100%;\n  height: 100%;\n}\n\n"],"sourceRoot":""}]);
+exports.push([module.i, ":host {\n  background-color: #efefef;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  height: 100px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  -webkit-box-flex: 1;\n}\n\n:host input[type=\"file\"] {\n  position: fixed;\n  top: -100em;\n}\n\n:host .headers-wrapper * {\n  padding-top: 4px;\n}\n\n:host .headers-wrapper *:first-child {\n  padding-top: 0;\n}\n\n:host [fs-banner-super],\n:host [fs-banner-sub] {\n  font-size: 12px;\n}\n\n:host [fs-banner-heading] {\n  font-size: 15px;\n}\n\n:host .picture-wrapper {\n  width: 80px;\n  height: 80px;\n  border-radius: 100%;\n  overflow: hidden;\n  margin: 10px;\n  margin-left: 15px;\n  position: relative;\n  cursor: pointer;\n}\n\n:host .picture-wrapper .icon-container {\n  margin-bottom: -14px;\n  background-color: #fcfbfc;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n  padding-top: calc(50% - 24px);\n  color: #a8a8a8;\n}\n\n:host .picture-wrapper .icon-container .material-icons {\n  font-family: 'Material Icons';\n  font-weight: normal;\n  font-style: normal;\n  font-size: 50px;\n  width: 50px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -webkit-font-feature-settings: 'liga';\n  -webkit-font-smoothing: antialiased;\n}\n\n:host .picture-wrapper .change {\n  margin-top: -34px;\n  width: 100%;\n  font-size: 11px;\n  position: absolute;\n  text-align: center;\n  /* background-color: transparent; */\n  background-color: rgba(128, 128, 128, .35);\n  height: 30px;\n  padding-top: 9px;\n  /* z-index: 1; */\n}\n\n:host .picture-wrapper.hover .change {\n  display: none;\n}\n\n:host .picture-wrapper.hover:hover .change {\n  display: block;\n}\n\n:host .picture-wrapper img {\n  width: 100%;\n  height: 100%;\n}\n\n", "", {"version":3,"sources":["/Users/mendor/work/fs-banner/src/components/fs-banner-component/src/components/fs-banner-component/fs-banner.component.scss","/Users/mendor/work/fs-banner/src/components/fs-banner-component/fs-banner.component.scss"],"names":[],"mappings":"AASA;EAEE,0BAAA;EACA,0BAAA;MAAA,uBAAA;UAAA,oBAAA;EAEA,cAAA;EACA,qBAAA;EAAA,qBAAA;EAAA,cAAA;EACA,+BAAA;UAAA,uBAAA;EACA,oBAAA;CCVD;;ADED;EAWM,gBAAA;EACA,YAAA;CCTL;;ADHD;EAiBU,iBAAA;CCVT;;ADWS;EACI,eAAA;CCRb;;ADXD;;EA0BM,gBAAA;CCVL;;ADaC;EACI,gBAAA;CCVL;;ADpBD;EAiCM,YAAA;EACA,aAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,kBAAA;EACA,mBAAA;EACA,gBAAA;CCTL;;AD/BD;EA2CU,qBAAA;EACA,0BAAA;EACA,aAAA;EACA,YAAA;EACA,mBAAA;EACA,8BAAA;EACA,eAAA;CCRT;;ADzCD;EAmDc,8BAAA;EACA,oBAAA;EACA,mBAAA;EACA,gBAAA;EACA,YAAA;EACA,eAAA;EACA,uBAAA;EACA,qBAAA;EACA,sBAAA;EACA,oBAAA;EACA,kBAAA;EACA,eAAA;EACA,sCAAA;EACA,oCAAA;CCNb;;ADSK;EACI,kBAAA;EACA,YAAA;EACA,gBAAA;EACA,mBAAA;EACA,mBAAA;EACA,oCAAA;EACA,2CAAA;EACA,aAAA;EACA,iBAAA;EAEA,iBAAA;CCPT;;ADvED;EAmFc,cAAA;CCRb;;ADWa;EACI,eAAA;CCRjB;;AD/ED;EA4FU,YAAA;EACA,aAAA;CCTT","file":"fs-banner.component.scss","sourcesContent":["// @import 'src/styles/theme.scss';\n// @include angular-material-theme($app-theme);\n// @mixin candy-carousel-theme($theme) {\n//     // Extract whichever individual palettes you need from the theme.\n//     $primary: map-get($theme, primary);\n//     $accent: map-get($theme, accent);\n\n\n// }\n:host {\n\n  background-color: #efefef;\n  align-items: center;\n\n  height: 100px;\n  display: flex;\n  box-sizing: border-box;\n  -webkit-box-flex: 1;\n\n  input[type=\"file\"] {\n      position: fixed;\n      top: -100em\n  }\n\n  .headers-wrapper {\n      * {\n          padding-top: 4px;\n          &:first-child {\n              padding-top: 0;\n          }\n      }\n  }\n\n  [fs-banner-super],\n  [fs-banner-sub] {\n      font-size: 12px;\n  }\n\n  [fs-banner-heading] {\n      font-size: 15px;\n  }\n  .picture-wrapper {\n      width: 80px;\n      height: 80px;\n      border-radius: 100%;\n      overflow: hidden;\n      margin: 10px;\n      margin-left: 15px;\n      position: relative;\n      cursor:pointer;\n\n      .icon-container {\n          margin-bottom: -14px;\n          background-color: #fcfbfc;\n          height: 100%;\n          width: 100%;\n          text-align: center;\n          padding-top: calc(50% - 24px);\n          color: #a8a8a8;\n          .material-icons {\n              font-family: 'Material Icons';\n              font-weight: normal;\n              font-style: normal;\n              font-size: 50px;\n              width: 50px;\n              line-height: 1;\n              letter-spacing: normal;\n              text-transform: none;\n              display: inline-block;\n              white-space: nowrap;\n              word-wrap: normal;\n              direction: ltr;\n              -webkit-font-feature-settings: 'liga';\n              -webkit-font-smoothing: antialiased;\n          }\n      }\n      .change {\n          margin-top: -34px;\n          width: 100%;\n          font-size: 11px;\n          position: absolute;\n          text-align: center;\n          /* background-color: transparent; */\n          background-color: rgba(128, 128, 128, 0.35);\n          height: 30px;\n          padding-top: 9px;\n\n          /* z-index: 1; */\n      }\n\n      &.hover {\n          .change {\n              display: none;\n          }\n          &:hover {\n              .change {\n                  display: block;\n              }\n          }\n      }\n      img {\n          width: 100%;\n          height: 100%;\n      }\n  }\n}\n",":host {\n  background-color: #efefef;\n  align-items: center;\n  height: 100px;\n  display: flex;\n  box-sizing: border-box;\n  -webkit-box-flex: 1;\n}\n\n:host input[type=\"file\"] {\n  position: fixed;\n  top: -100em;\n}\n\n:host .headers-wrapper * {\n  padding-top: 4px;\n}\n\n:host .headers-wrapper *:first-child {\n  padding-top: 0;\n}\n\n:host [fs-banner-super],\n:host [fs-banner-sub] {\n  font-size: 12px;\n}\n\n:host [fs-banner-heading] {\n  font-size: 15px;\n}\n\n:host .picture-wrapper {\n  width: 80px;\n  height: 80px;\n  border-radius: 100%;\n  overflow: hidden;\n  margin: 10px;\n  margin-left: 15px;\n  position: relative;\n  cursor: pointer;\n}\n\n:host .picture-wrapper .icon-container {\n  margin-bottom: -14px;\n  background-color: #fcfbfc;\n  height: 100%;\n  width: 100%;\n  text-align: center;\n  padding-top: calc(50% - 24px);\n  color: #a8a8a8;\n}\n\n:host .picture-wrapper .icon-container .material-icons {\n  font-family: 'Material Icons';\n  font-weight: normal;\n  font-style: normal;\n  font-size: 50px;\n  width: 50px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -webkit-font-feature-settings: 'liga';\n  -webkit-font-smoothing: antialiased;\n}\n\n:host .picture-wrapper .change {\n  margin-top: -34px;\n  width: 100%;\n  font-size: 11px;\n  position: absolute;\n  text-align: center;\n  /* background-color: transparent; */\n  background-color: rgba(128, 128, 128, 0.35);\n  height: 30px;\n  padding-top: 9px;\n  /* z-index: 1; */\n}\n\n:host .picture-wrapper.hover .change {\n  display: none;\n}\n\n:host .picture-wrapper.hover:hover .change {\n  display: block;\n}\n\n:host .picture-wrapper img {\n  width: 100%;\n  height: 100%;\n}\n\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -62,8 +62,9 @@ var FsBannerComponent = (function () {
         el.click();
     };
     FsBannerComponent.prototype.fileChanged = function ($event) {
-        if ($event && $event.path && $event.path[0] && $event.path[0].files)
+        if ($event && $event.path && $event.path[0] && $event.path[0].files) {
             this.onUpload.emit($event.path[0].files[0]);
+        }
     };
     __decorate([
         core_1.Input('fsBannerPicture'),
@@ -199,73 +200,10 @@ webpackEmptyAsyncContext.id = "../tools lazy recursive";
 
 /***/ }),
 
-/***/ "../tools/components/examples/examples.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"example-title\">{{title}}</div>\r\n<mat-tab-group>\r\n  <mat-tab label=\"Examples\">\r\n      <div class=\"examples-body\">\r\n        <ng-content></ng-content>\r\n      </div>\r\n  </mat-tab>\r\n  <mat-tab label=\"Docs\" *ngIf=\"loaded\">\r\n    <div class=\"iframe-container\">\r\n      <iframe class=\"iframe-example ng-star-inserted\" [src]=\"submoduleUrl\"></iframe>\r\n    </div>\r\n  </mat-tab>\r\n</mat-tab-group>\r\n"
-
-/***/ }),
-
-/***/ "../tools/components/examples/examples.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../node_modules/@angular/core/esm2015/core.js");
-var platform_browser_1 = __webpack_require__("../node_modules/@angular/platform-browser/esm2015/platform-browser.js");
-var FsExamplesComponent = (function () {
-    function FsExamplesComponent(sanitizer) {
-        this.sanitizer = sanitizer;
-        this.loaded = false;
-    }
-    FsExamplesComponent.prototype.ngOnInit = function () {
-        this._submoduleUrl = this.sanitizer
-            .bypassSecurityTrustResourceUrl("https://" + this.submoduleName + ".components.firestitch.com/docs");
-        this.loaded = true;
-    };
-    Object.defineProperty(FsExamplesComponent.prototype, "submoduleUrl", {
-        get: function () {
-            return this._submoduleUrl;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", String)
-    ], FsExamplesComponent.prototype, "title", void 0);
-    __decorate([
-        core_1.Input('name'),
-        __metadata("design:type", String)
-    ], FsExamplesComponent.prototype, "submoduleName", void 0);
-    FsExamplesComponent = __decorate([
-        core_1.Component({
-            selector: 'fs-examples',
-            template: __webpack_require__("../tools/components/examples/examples.component.html")
-        }),
-        __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
-    ], FsExamplesComponent);
-    return FsExamplesComponent;
-}());
-exports.FsExamplesComponent = FsExamplesComponent;
-
-
-/***/ }),
-
 /***/ "./app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<fs-examples title=\"[Component Type] Component\">\n  <fs-example title=\"First Example\" componentName=\"first-example\">\n      <first-example></first-example>\n  </fs-example>\n</fs-examples>\n\n"
+module.exports = "<fs-examples title=\"Banner\">\n  <fs-example title=\"First Example\" componentName=\"first-example\">\n      <first-example></first-example>\n  </fs-example>\n</fs-examples>\n"
 
 /***/ }),
 
@@ -468,7 +406,6 @@ var src_1 = __webpack_require__("../src/index.ts");
 var animations_1 = __webpack_require__("../node_modules/@angular/platform-browser/esm2015/animations.js");
 var material_module_1 = __webpack_require__("./app/material.module.ts");
 var example_1 = __webpack_require__("../node_modules/@firestitch/example/package/index.js");
-var examples_component_1 = __webpack_require__("../tools/components/examples/examples.component.ts");
 var first_example_component_1 = __webpack_require__("./app/components/first-example/first-example.component.ts");
 var PlaygroundModule = (function () {
     function PlaygroundModule() {
@@ -487,8 +424,7 @@ var PlaygroundModule = (function () {
             entryComponents: [],
             declarations: [
                 app_component_1.AppComponent,
-                first_example_component_1.FirstExampleComponent,
-                examples_component_1.FsExamplesComponent
+                first_example_component_1.FirstExampleComponent
             ],
             providers: [],
         })

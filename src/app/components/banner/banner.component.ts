@@ -1,10 +1,19 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  ViewChild
+} from '@angular/core';
 
 
 @Component({
   selector: 'fs-banner',
   templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss']
+  styleUrls: ['./banner.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FsBannerComponent {
   @Input('fsBannerPicture') picture: string;
@@ -12,7 +21,7 @@ export class FsBannerComponent {
 
   @Output('fsBannerOnUpload') onUpload: EventEmitter<any> = new EventEmitter<any>(true);
 
-  @ViewChild('fileInput') fileInput: ElementRef;
+  @ViewChild('fileInput', { static: true }) fileInput: ElementRef;
 
   constructor() {
   }

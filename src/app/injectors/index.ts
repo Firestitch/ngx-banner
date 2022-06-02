@@ -1,1 +1,1 @@
-export * from './offline-coinfig.injector';
+export * from './banner-config.injector';

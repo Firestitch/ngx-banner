@@ -1,1 +1,1 @@
-export * from './offline-config';
+export * from './banner-config';

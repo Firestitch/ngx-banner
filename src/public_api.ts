@@ -1,13 +1,9 @@
-export { FsOfflineModule } from './app/offline/offline.module';
-export { FsOfflineManageModule } from './app/offline-manage/offline-manage.module';
+export { FsBannerModule } from './app/modules/banner/banner.module';
+export { FsBannerManageModule } from './app/modules/banner-manage/banner-manage.module';
 
-export { Offline } from './app/interfaces/offline-config';
+export { FsBannerConfig } from './app/interfaces/banner-config';
 
-export { FsOfflineConfig } from './app/interfaces/offline-config';
+export { FS_BANNER_CONFIG } from './app/injectors/banner-config.injector';
 
-export { FsOffline } from './app/services/offline.service';
-
-export { FS_OFFLINE_CONFIG } from './app/injectors/offline-coinfig.injector';
-
-export { OfflineComponent } from './app/offline/components/offline/offline.component';
-export { OfflineManageComponent } from './app/offline-manage/components/offline-manage/offline-manage.component';
+export { BannerComponent } from './app/modules/banner/components/banner/banner.component';
+export { BannerManageComponent } from './app/modules/banner-manage/components/banner-manage/banner-manage.component';

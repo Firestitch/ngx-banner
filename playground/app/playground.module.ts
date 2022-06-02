@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { FsExampleModule } from '@firestitch/example';
 import { FsMessageModule } from '@firestitch/message';
-import { FsOfflineManageModule, FsOfflineModule } from '@firestitch/offline';
+import { FsBannerModule, FsBannerManageModule, FS_BANNER_CONFIG } from '@firestitch/banner';
 import { FsLabelModule } from '@firestitch/label';
 import { FsStoreModule } from '@firestitch/store';
 import { FsHtmlEditorModule } from '@firestitch/html-editor';
@@ -18,26 +18,23 @@ import {
   ExamplesComponent
 } from './components';
 import { AppComponent } from './app.component';
-import { OfflineManageComponent } from './components/offline-manage';
-import { FS_OFFLINE_CONFIG } from 'src/app/injectors';
-import { offlineConfig } from './helpers/offline-config';
-import { OfflineComponent } from './components/offline';
+import { BannerManageComponent } from './components/banner-manage';
+import { bannerConfig } from './helpers/banner-config';
 import { FsDatePickerModule } from '@firestitch/datepicker';
-import { OfflineService } from './services';
-import { FsOffline } from 'src/app/services';
+import { BannerService } from './services';
 
 
 const routes: Routes = [
   { path: '', component: ExamplesComponent },
-  { path: 'offline', component: OfflineComponent },
 ];
 
 @NgModule({
   bootstrap: [ AppComponent ],
   imports: [
     BrowserModule,
-    FsOfflineManageModule,
-    FsOfflineModule,
+    FsBannerModule,
+    FsBannerManageModule,
+    FsBannerModule,
     BrowserAnimationsModule,
     AppMaterialModule,
     FormsModule,
@@ -51,23 +48,17 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
   ],
   providers: [
-    { provide: FS_OFFLINE_CONFIG, 
-      useFactory: offlineConfig, 
-      deps: [ OfflineService ] 
+    { provide: FS_BANNER_CONFIG, 
+      useFactory: bannerConfig, 
+      deps: [BannerService],
     },
   ],
   declarations: [
     AppComponent,
     ExamplesComponent,
-    OfflineManageComponent,
-    OfflineComponent,
+    BannerManageComponent,
   ],
 })
 export class PlaygroundModule {
 
-  public constructor(
-    private _offline: FsOffline,
-  ) {
-    _offline.init();
-  }
 }

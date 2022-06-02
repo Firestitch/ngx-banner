@@ -1,0 +1,23 @@
+.banner {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  color: #fff;
+
+  .icon {
+    margin-right: 10px;  
+    align-self: flex-start;
+  }
+
+  .message {
+    flex-grow: 1;
+    white-space: pre-line;
+  }
+
+  .button {
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin: -6px -6px -6px 10px;
+  }  
+}

@@ -12,10 +12,13 @@ import { FsFormModule } from '@firestitch/form';
 import { FsHtmlEditorModule } from '@firestitch/html-editor';
 import { FsLabelModule } from '@firestitch/label';
 import { FsSkeletonModule } from '@firestitch/skeleton';
-
-import { BannerManageComponent } from './components';
+import { FsListModule } from '@firestitch/list';
 import { FsIconPickerModule } from '@firestitch/icon-picker';
 import { FsColorPickerModule } from '@firestitch/colorpicker';
+import { FsDialogModule } from '@firestitch/dialog';
+
+import { BannerManageComponent, BannerComponent } from './components';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -28,17 +31,21 @@ import { FsColorPickerModule } from '@firestitch/colorpicker';
     MatInputModule,
     MatCheckboxModule,
     MatIconModule,
+    MatDialogModule,
 
     FsFormModule,
     FsIconPickerModule,
     FsColorPickerModule,
     FsSkeletonModule,
     FsLabelModule,
+    FsListModule,
+    FsDialogModule,
 
     FsHtmlEditorModule,
   ],
   declarations: [
     BannerManageComponent,
+    BannerComponent,
   ],
   exports: [
     BannerManageComponent,

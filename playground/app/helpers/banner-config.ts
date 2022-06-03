@@ -9,9 +9,9 @@ export function bannerConfig(
 ): FsBannerConfig {
 
   return {
-    loadStatus: () => {
+    loadBanner: (type: string) => {
       return of(bannerService.banner);
     },
-    statusFrequency: 5,
+    loadFrequency: 5,
   };
 }

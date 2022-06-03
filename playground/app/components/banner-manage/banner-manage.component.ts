@@ -14,10 +14,12 @@ export class BannerManageComponent {
     private _bannerSerice: BannerService,
   ) {}
 
-  public loadBanner = () => {
-    return of({
-      ...this._bannerSerice.banner,
-    });
+  public loadBanners = () => {
+    return of([
+      {
+        ...this._bannerSerice.banner,
+      }
+    ]);
   }
 
   public saveBanner = (banner) => {

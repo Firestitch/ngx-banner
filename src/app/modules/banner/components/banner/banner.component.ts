@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, Inject,
+  Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, Inject, Input,
 } from '@angular/core';
 import { FsBannerConfig } from '../../../../interfaces';
 import { FS_BANNER_CONFIG } from '../../../../injectors';
@@ -16,6 +16,8 @@ import { switchMap, takeUntil } from 'rxjs/operators';
 })
 export class BannerComponent implements OnInit, OnDestroy {
 
+  @Input() public type: string;
+
   public banner: any = null;
 
   private _destroy$ = new Subject();
@@ -26,9 +28,9 @@ export class BannerComponent implements OnInit, OnDestroy {
   ) { }
 
   public ngOnInit(): void {
-    timer(0, this._config.statusFrequency * 1000)
+    timer(0, this._config.loadFrequency * 1000)
       .pipe(
-        switchMap(() => this._config.loadStatus()),
+        switchMap(() => this._config.loadBanner(this.type)),
         takeUntil(this._destroy$),
       )
       .subscribe((banner) => {

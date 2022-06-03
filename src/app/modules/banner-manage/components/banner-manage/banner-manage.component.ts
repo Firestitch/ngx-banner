@@ -1,11 +1,16 @@
 import {
-  Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, Input,
+  Component, OnInit, OnDestroy, ChangeDetectionStrategy, Input, ViewChild,
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
-import { FsMessage, MessageType } from '@firestitch/message';
+import { FsListComponent, FsListConfig } from '@firestitch/list';
+import { MessageType } from '@firestitch/message';
 
 import { Observable, Subject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, takeUntil } from 'rxjs/operators';
+
+import { Banner } from '../../../../interfaces/banner';
+import { BannerComponent } from '../banner/banner.component';
 
 
 @Component({
@@ -16,40 +21,49 @@ import { tap } from 'rxjs/operators';
 })
 export class BannerManageComponent implements OnInit, OnDestroy {
 
-  @Input() public saveBanner: (banner) => Observable<any>;
-  @Input() public loadBanner: () => Observable<any>;
+  @ViewChild(FsListComponent)
+  public list: FsListComponent;
+
+  @Input() public saveBanner: (banner) => Observable<Banner>;
+  @Input() public loadBanners: () => Observable<Banner[]>;
 
   public banner: any = null;
   public MessageType = MessageType;
+  public listConfig: FsListConfig;
 
   private _destroy$ = new Subject();
 
   constructor(
-    private _cdRef: ChangeDetectorRef,
-    private _message: FsMessage,
+    private _dialog: MatDialog,
   ) { }
 
   public ngOnInit(): void {
-    this.loadBanner()
-      .subscribe((banner) => {
-        this.banner = banner || {
-          icon: 'info',
-          color: '#29B7FF',
-        };
-
-        this._cdRef.markForCheck();
-      });
+    this.listConfig = {
+      paging: false,
+      fetch: () => {
+        return this.loadBanners()
+          .pipe(
+            map((response) => ({ data: response })),
+          );
+      },
+    };
   }
 
-  public save = () => {
-    return this.saveBanner(this.banner)
+  public openBanner(banner): void {
+    this._dialog.open(BannerComponent, {
+      data: {
+        banner,
+        saveBanner: this.saveBanner,
+      },
+    })
+    .afterClosed()
       .pipe(
-        tap((banner) => {
-          this._message.success('Saved Changes');
-          this.banner = banner;
-        }),
-      );
-  };
+        takeUntil(this._destroy$),
+      )
+      .subscribe(() => {
+        this.list.reload();
+      });    
+  }
 
   public ngOnDestroy(): void {
     this._destroy$.next();

@@ -1,85 +1,29 @@
-<form fsForm [submit]="save" *fsSkeleton="banner">
-  <fs-label-field>
-    <fs-label>Enable Banner</fs-label>
-    <mat-checkbox 
-        name="enabled" 
-        [(ngModel)]="banner.enabled">
-      Enabled
-    </mat-checkbox>
-  </fs-label-field>
+<fs-list [config]="listConfig">
+  <fs-list-column title="Name">
+    <ng-template fs-list-cell let-row="row">
+      <a
+          (click)="openBanner(row)">
+        {{row.name}}
+      </a>
+    </ng-template>
+  </fs-list-column> 
 
-  <ng-container *ngIf="banner.enabled">   
-    <div>
-      <mat-form-field>
-        <input
-          fsColorPicker
-          matInput
-          [required]="true"
-          name="color"
-          [(ngModel)]="banner.color"
-          placeholder="Color">
-      </mat-form-field>    
-    </div>
+  <fs-list-column title="Status">
+    <ng-template fs-list-cell let-row="row">
+      {{row.enabled ? 'Enabled' : 'Disabled'}}
+    </ng-template>
+  </fs-list-column>
 
-    <div>
-      <mat-form-field>
-        <input 
-          matInput 
-          placeholder="Icon" 
-          name="icon"
-          [(ngModel)]="banner.icon" 
-          fsIconPicker
-          [color]="banner.color">
-      </mat-form-field>
-    </div>
-
-    <mat-form-field class="full-width">
-      <textarea
-        matInput
-        cdkTextareaAutosize
-        placeholder="Message"
-        [required]="true"
-        [(ngModel)]="banner.message"
-        name="message">
-      </textarea>
-    </mat-form-field>
-    
-    <fs-label-field>
-      <fs-label>Enable Button</fs-label>
-      <mat-checkbox 
-          name="button" 
-          [(ngModel)]="banner.button">
-        Button
-      </mat-checkbox>
-    </fs-label-field>   
-    
-    <ng-container *ngIf="banner.button"> 
-      <mat-form-field class="full-width">
-        <input
-          matInput
-          [(ngModel)]="banner.buttonLabel"
-          name="buttonLabel"
-          [required]="true"
-          placeholder="Label">
-      </mat-form-field>
-
-      <mat-form-field class="full-width">
-        <input
-          matInput
-          [(ngModel)]="banner.buttonUrl"
-          fsFormUrl
-          name="buttonUrl"
-          [required]="true"
-          placeholder="Url">
-      </mat-form-field>
-    </ng-container>  
-  </ng-container>
-
-  <br>
-  <button
-      mat-raised-button
-      type="submit"
-      color="primary">
-    Save
-  </button>
-</form>
+  <fs-list-column title="Message">
+    <ng-template fs-list-cell let-row="row">
+      <div class="row">
+        <mat-icon
+            *ngIf="row.icon"
+            [ngStyle]="{ color: row.color }">
+          {{row.icon}}
+        </mat-icon>
+        <span>{{row.message}}</span>
+      </div>
+    </ng-template>
+  </fs-list-column>  
+</fs-list>

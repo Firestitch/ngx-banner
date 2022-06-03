@@ -14,6 +14,8 @@ export class BannerService {
     button: true,
     buttonUrl: 'https://google.com',
     buttonLabel: 'Visit Google',
+    type: 'default',
+    name: 'Default',
   };
   
 }

@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 import { FsFormModule } from '@firestitch/form';
-import { FsHtmlEditorModule } from '@firestitch/html-editor';
 import { FsLabelModule } from '@firestitch/label';
 import { FsSkeletonModule } from '@firestitch/skeleton';
 import { FsListModule } from '@firestitch/list';
@@ -40,8 +39,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     FsLabelModule,
     FsListModule,
     FsDialogModule,
-
-    FsHtmlEditorModule,
   ],
   declarations: [
     BannerManageComponent,

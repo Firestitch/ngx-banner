@@ -5,17 +5,19 @@
         *ngIf="banner.icon">
       {{banner.icon}}
     </mat-icon>
-    <div class="message">
-      {{banner.message}}
+    <div class="content">
+      <div class="message">
+        {{banner.message}}
+      </div>
+      <ng-container *ngIf="banner.button">
+        <a    
+            class="button"
+            mat-raised-button
+            [href]="banner.buttonUrl"
+            target="_blank">
+          {{banner.buttonLabel}}
+        </a>
+      </ng-container>      
     </div>
-    <ng-container *ngIf="banner.button">
-      <a  
-          class="button"
-          mat-raised-button
-          [href]="banner.buttonUrl"
-          target="_blank">
-        {{banner.buttonLabel}}
-      </a>
-    </ng-container>
   </div>
 </ng-container>

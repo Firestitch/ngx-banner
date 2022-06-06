@@ -5,6 +5,10 @@
   border-radius: 5px;
   color: #fff;
 
+  .content {
+    display: flex;
+  }
+
   .icon {
     margin-right: 10px;  
     align-self: flex-start;
@@ -13,11 +17,22 @@
   .message {
     flex-grow: 1;
     white-space: pre-line;
+    width: 100%;
   }
 
   .button {
-    flex-shrink: 0;
     align-self: flex-start;
-    margin: -6px -6px -6px 10px;
+    flex-shrink: 0;
+    margin: -6px -6px -6px 10px;    
   }  
+}
+
+@media (max-width: 999px) {
+  .content { 
+    flex-direction: column;
+
+    .button {
+      margin: 8px 0 0 0;
+    }
+  }
 }

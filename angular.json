@@ -31,14 +31,15 @@
                 "glob": "**/*",
                 "input": "node_modules/@firestitch/froala/js/",
                 "output": "assets/js/froala/"
-              }              
+              }
             ],
             "styles": [
               "playground/styles.scss"
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-              "highlight.js"
+              "highlight.js",
+              "color"
             ]
           },
           "configurations": {

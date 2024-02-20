@@ -5,7 +5,7 @@ let exec = function(cmd) {
   execSync(cmd, { stdio: 'inherit' });
 }
 
-const angularJson = fs.readFileSync('angular.json').toString().replace(`"extractCss": true,`,'');
+const angularJson = fs.readFileSync('angular.json').toString().replace(`"extractCss": true,\n`,'');
 fs.writeFileSync('angular.json', angularJson);
 
 const package = JSON.parse(fs.readFileSync('package.json').toString());

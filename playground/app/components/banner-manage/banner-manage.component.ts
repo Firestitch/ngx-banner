@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { BannerService } from 'playground/app/services';
 import { of } from 'rxjs';
+import { BannerManageComponent as BannerManageComponent_1 } from '../../../../src/app/modules/banner-manage/components/banner-manage/banner-manage.component';
 
 
 @Component({
-  selector: 'app-banner-manage',
-  templateUrl: './banner-manage.component.html',
-  styleUrls: ['./banner-manage.component.scss']
+    selector: 'app-banner-manage',
+    templateUrl: './banner-manage.component.html',
+    styleUrls: ['./banner-manage.component.scss'],
+    standalone: true,
+    imports: [BannerManageComponent_1]
 })
 export class BannerManageComponent {
 

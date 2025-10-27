@@ -1,5 +1,5 @@
-export { FsBannerModule } from './app/modules/banner/banner.module';
-export { FsBannerManageModule } from './app/modules/banner-manage/banner-manage.module';
+
+
 
 export { FsBannerConfig } from './app/interfaces/banner-config';
 export { Banner } from './app/interfaces/banner';

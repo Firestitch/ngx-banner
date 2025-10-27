@@ -1,11 +1,20 @@
+import { NgStyle } from '@angular/common';
 import {
-  Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, Inject, Input,
+  ChangeDetectionStrategy, ChangeDetectorRef,
+  Component,
+  Inject, Input,
+  OnDestroy,
+  OnInit,
 } from '@angular/core';
-import { FsBannerConfig } from '../../../../interfaces';
-import { FS_BANNER_CONFIG } from '../../../../injectors';
+
+import { MatAnchor } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 import { Subject, timer } from 'rxjs';
 import { switchMap, takeUntil } from 'rxjs/operators';
+
+import { FS_BANNER_CONFIG } from '../../../../injectors';
+import { FsBannerConfig } from '../../../../interfaces';
 
 
 @Component({
@@ -13,6 +22,12 @@ import { switchMap, takeUntil } from 'rxjs/operators';
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    NgStyle,
+    MatIcon,
+    MatAnchor,
+  ],
 })
 export class BannerComponent implements OnInit, OnDestroy {
 

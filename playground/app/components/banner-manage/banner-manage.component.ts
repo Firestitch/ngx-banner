@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { BannerService } from 'playground/app/services';
 import { of } from 'rxjs';
 import { BannerManageComponent as BannerManageComponent_1 } from '../../../../src/app/modules/banner-manage/components/banner-manage/banner-manage.component';
@@ -12,10 +12,8 @@ import { BannerManageComponent as BannerManageComponent_1 } from '../../../../sr
     imports: [BannerManageComponent_1]
 })
 export class BannerManageComponent {
+  private _bannerSerice = inject(BannerService);
 
-  public constructor(
-    private _bannerSerice: BannerService,
-  ) {}
 
   public loadBanners = () => {
     return of([

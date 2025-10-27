@@ -1,7 +1,4 @@
-import {
-  Component, OnInit, OnDestroy, ChangeDetectionStrategy, 
-  ChangeDetectorRef, Input, Inject,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, Input, inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose } from '@angular/material/dialog';
 
 import { FsMessage, MessageType } from '@firestitch/message';
@@ -49,19 +46,17 @@ import { MatButton } from '@angular/material/button';
     ],
 })
 export class BannerComponent implements OnInit, OnDestroy {
+  private _data = inject(MAT_DIALOG_DATA);
+  private _dialogRef = inject<MatDialogRef<BannerComponent>>(MatDialogRef);
+  private _cdRef = inject(ChangeDetectorRef);
+  private _message = inject(FsMessage);
+
 
   public banner: any = null;
   public saveBanner: (banner) => Observable<any>;;
   public MessageType = MessageType;
 
   private _destroy$ = new Subject();
-
-  constructor(
-    @Inject(MAT_DIALOG_DATA) private _data,    
-    private _dialogRef: MatDialogRef<BannerComponent>,
-    private _cdRef: ChangeDetectorRef,
-    private _message: FsMessage,
-  ) { }
 
   public ngOnInit(): void {
     this.saveBanner = this._data.saveBanner;

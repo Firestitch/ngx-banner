@@ -1,6 +1,4 @@
-import {
-  Component, OnInit, OnDestroy, ChangeDetectionStrategy, Input, ViewChild,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, Input, ViewChild, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 import { FsListComponent, FsListConfig, FsListModule } from '@firestitch/list';
@@ -28,6 +26,8 @@ import { NgStyle } from '@angular/common';
     ],
 })
 export class BannerManageComponent implements OnInit, OnDestroy {
+  private _dialog = inject(MatDialog);
+
 
   @ViewChild(FsListComponent)
   public list: FsListComponent;
@@ -40,10 +40,6 @@ export class BannerManageComponent implements OnInit, OnDestroy {
   public listConfig: FsListConfig;
 
   private _destroy$ = new Subject();
-
-  constructor(
-    private _dialog: MatDialog,
-  ) { }
 
   public ngOnInit(): void {
     this.listConfig = {

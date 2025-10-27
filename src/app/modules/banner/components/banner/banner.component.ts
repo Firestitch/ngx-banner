@@ -1,11 +1,5 @@
 import { NgStyle } from '@angular/common';
-import {
-  ChangeDetectionStrategy, ChangeDetectorRef,
-  Component,
-  Inject, Input,
-  OnDestroy,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit, inject } from '@angular/core';
 
 import { MatAnchor } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
@@ -30,17 +24,15 @@ import { FsBannerConfig } from '../../../../interfaces';
   ],
 })
 export class BannerComponent implements OnInit, OnDestroy {
+  private _config = inject<FsBannerConfig>(FS_BANNER_CONFIG);
+  private _cdRef = inject(ChangeDetectorRef);
+
 
   @Input() public type: string;
 
   public banner: any = null;
 
   private _destroy$ = new Subject();
-
-  constructor(
-    @Inject(FS_BANNER_CONFIG) private _config: FsBannerConfig,
-    private _cdRef: ChangeDetectorRef,
-  ) { }
 
   public ngOnInit(): void {
     timer(0, this._config.loadFrequency * 1000)

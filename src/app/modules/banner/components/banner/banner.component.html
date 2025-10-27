@@ -1,23 +1,25 @@
-<ng-container *ngIf="banner">
+@if (banner) {
   <div class="banner" [ngStyle]="{ background: banner.color }">
-    <mat-icon
+    @if (banner.icon) {
+      <mat-icon
         class="icon"
-        *ngIf="banner.icon">
-      {{banner.icon}}
-    </mat-icon>
+        >
+        {{banner.icon}}
+      </mat-icon>
+    }
     <div class="content">
       <div class="message">
         {{banner.message}}
       </div>
-      <ng-container *ngIf="banner.button">
-        <a    
-            class="button"
-            mat-raised-button
-            [href]="banner.buttonUrl"
-            target="_blank">
+      @if (banner.button) {
+        <a
+          class="button"
+          mat-raised-button
+          [href]="banner.buttonUrl"
+          target="_blank">
           {{banner.buttonLabel}}
         </a>
-      </ng-container>      
+      }
     </div>
   </div>
-</ng-container>
+}

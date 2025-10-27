@@ -5,14 +5,14 @@
     <div mat-dialog-content>
       <fs-label-field>
         <fs-label>Enable Banner</fs-label>
-        <mat-checkbox 
-            name="enabled" 
-            [(ngModel)]="banner.enabled">
+        <mat-checkbox
+          name="enabled"
+          [(ngModel)]="banner.enabled">
           Enabled
         </mat-checkbox>
       </fs-label-field>
-    
-      <ng-container *ngIf="banner.enabled">   
+
+      @if (banner.enabled) {
         <div>
           <mat-form-field class="full-width">
             <input
@@ -22,20 +22,19 @@
               name="color"
               [(ngModel)]="banner.color"
               placeholder="Color">
-          </mat-form-field>    
+          </mat-form-field>
         </div>
         <div>
           <mat-form-field class="full-width">
-            <input 
-              matInput 
-              placeholder="Icon" 
+            <input
+              matInput
+              placeholder="Icon"
               name="icon"
-              [(ngModel)]="banner.icon" 
+              [(ngModel)]="banner.icon"
               fsIconPicker
               [color]="banner.color">
           </mat-form-field>
         </div>
-    
         <mat-form-field class="full-width">
           <textarea
             matInput
@@ -46,17 +45,15 @@
             name="message">
           </textarea>
         </mat-form-field>
-        
         <fs-label-field>
           <fs-label>Enable Button</fs-label>
-          <mat-checkbox 
-              name="button" 
-              [(ngModel)]="banner.button">
+          <mat-checkbox
+            name="button"
+            [(ngModel)]="banner.button">
             Button
           </mat-checkbox>
-        </fs-label-field>   
-        
-        <ng-container *ngIf="banner.button"> 
+        </fs-label-field>
+        @if (banner.button) {
           <mat-form-field class="full-width">
             <input
               matInput
@@ -65,7 +62,6 @@
               [required]="true"
               placeholder="Label">
           </mat-form-field>
-    
           <mat-form-field class="full-width">
             <input
               matInput
@@ -75,20 +71,20 @@
               [required]="true"
               placeholder="Url">
           </mat-form-field>
-        </ng-container>  
-      </ng-container>
-    </div>       
+        }
+      }
+    </div>
     <mat-dialog-actions>
       <button
-          mat-raised-button
-          type="submit"
-          color="primary">
+        mat-raised-button
+        type="submit"
+        color="primary">
         Save
       </button>
       <button
-          mat-button
-          type="button"
-          mat-dialog-close>
+        mat-button
+        type="button"
+        mat-dialog-close>
         Cancel
       </button>
     </mat-dialog-actions>

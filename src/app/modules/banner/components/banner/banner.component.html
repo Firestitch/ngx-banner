@@ -1,23 +1,23 @@
 @if (banner) {
-  <div class="banner" [ngStyle]="{ background: banner.color }">
+  <div
+      class="banner"
+      [ngStyle]="{ background: banner.color }">
     @if (banner.icon) {
-      <mat-icon
-        class="icon"
-        >
-        {{banner.icon}}
+      <mat-icon class="icon">
+        {{ banner.icon }}
       </mat-icon>
     }
     <div class="content">
       <div class="message">
-        {{banner.message}}
+        {{ banner.message }}
       </div>
       @if (banner.button) {
         <a
-          class="button"
-          mat-raised-button
-          [href]="banner.buttonUrl"
-          target="_blank">
-          {{banner.buttonLabel}}
+            class="button"
+            mat-flat-button
+            [href]="banner.buttonUrl"
+            target="_blank">
+          {{ banner.buttonLabel }}
         </a>
       }
     </div>

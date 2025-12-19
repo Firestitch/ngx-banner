@@ -24,15 +24,14 @@ import { FsBannerConfig } from '../../../../interfaces';
   ],
 })
 export class BannerComponent implements OnInit, OnDestroy {
-  private _config = inject<FsBannerConfig>(FS_BANNER_CONFIG);
-  private _cdRef = inject(ChangeDetectorRef);
-
 
   @Input() public type: string;
 
   public banner: any = null;
 
   private _destroy$ = new Subject();
+  private _config = inject<FsBannerConfig>(FS_BANNER_CONFIG);
+  private _cdRef = inject(ChangeDetectorRef);
 
   public ngOnInit(): void {
     timer(0, this._config.loadFrequency * 1000)

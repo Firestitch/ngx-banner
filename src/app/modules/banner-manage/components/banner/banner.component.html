@@ -1,17 +1,22 @@
-
 <fs-dialog>
-  <form fsForm [submit]="save" *fsSkeleton="banner">
-    <h1 mat-dialog-title>Banner</h1>
+  <form
+      fsForm
+      [submit]="save"
+      *fsSkeleton="banner">
+    <h1 mat-dialog-title>
+      Banner
+    </h1>
     <div mat-dialog-content>
       <fs-label-field>
-        <fs-label>Enable Banner</fs-label>
+        <fs-label>
+          Enable Banner
+        </fs-label>
         <mat-checkbox
-          name="enabled"
-          [(ngModel)]="banner.enabled">
+            name="enabled"
+            [(ngModel)]="banner.enabled">
           Enabled
         </mat-checkbox>
       </fs-label-field>
-
       @if (banner.enabled) {
         <div>
           <mat-form-field class="full-width">
@@ -46,10 +51,12 @@
           </textarea>
         </mat-form-field>
         <fs-label-field>
-          <fs-label>Enable Button</fs-label>
+          <fs-label>
+            Enable Button
+          </fs-label>
           <mat-checkbox
-            name="button"
-            [(ngModel)]="banner.button">
+              name="button"
+              [(ngModel)]="banner.button">
             Button
           </mat-checkbox>
         </fs-label-field>
@@ -76,15 +83,15 @@
     </div>
     <mat-dialog-actions>
       <button
-        mat-raised-button
-        type="submit"
-        color="primary">
+          mat-button
+          type="submit"
+          color="primary">
         Save
       </button>
       <button
-        mat-button
-        type="button"
-        mat-dialog-close>
+          mat-button
+          type="button"
+          mat-dialog-close>
         Cancel
       </button>
     </mat-dialog-actions>
